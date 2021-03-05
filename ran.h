@@ -6,6 +6,7 @@ struct Node
     int address;
     struct Node *next;
 };
+
 void printlist(struct Node *head);
 void add_new_node(struct Node **head, int address);
 int shuffle(int *deny, int k, int *adress, struct Node **head);

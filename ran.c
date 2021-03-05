@@ -32,8 +32,8 @@ void add_new_node(struct Node **head, int address)
    {
       last = last->next;
    }
-   last->next = new_node;
 
+   last->next = new_node;
    return;
 }
 
