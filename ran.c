@@ -1,19 +1,13 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-
-struct Node
-{
-   int address;
-   struct Node *next;
-};
+#include "ran.h"
 
 void printlist(struct Node *head)
 {
-
    while (head != NULL)
    {
-      printf("Linked list: %d ", head->address);
+      printf("Random linked list: %d\n", head->address);
       head = head->next;
    }
 }
@@ -75,29 +69,4 @@ void print_arr(int *deny)
       printf("Deny: %d ", *(deny + i));
    }
    printf("\n");
-}
-
-int main()
-{
-   struct Node *head = NULL;
-   int k = 0;
-   int curr_k = 0;
-   srand(time(NULL)); // Initialization, should only be called once.
-   int arr_address[] = {10, 20, 30, 40, 50, 60};
-   int ran_arr_address[6]; //Måsta ha kvar den annars funkar hänger det sig när jag kör programmet
-   int deny_arr[6];
-   for (int i = 0; i < 6; i++)
-   {
-
-      curr_k = k;
-      k = shuffle(deny_arr, k, arr_address, &head);
-      if (curr_k == k)
-      {
-         i--;
-      }
-   }
-
-   //print_arr(deny_arr);
-   printlist(head);
-   return 0;
 }
