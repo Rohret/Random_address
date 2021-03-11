@@ -12,6 +12,27 @@ void printlist(struct Node *head)
    }
 }
 
+void start_address(int arr_address[])
+{
+   struct Node *head = NULL;
+   int k = 0, curr_k = 0;
+
+   srand(time(NULL)); // Initialization, should only be called once.
+   //int ran_arr_address[6]; //Måsta ha kvar den annars hänger det sig när jag kör programmet
+   int deny_arr[6];
+   for (int i = 0; i < 6; i++)
+   {
+
+      curr_k = k;
+      k = shuffle(deny_arr, k, arr_address, &head);
+      if (curr_k == k)
+      {
+         i--;
+      }
+   }
+   printlist(head);
+}
+
 void add_new_node(struct Node **head, int address)
 {
 
